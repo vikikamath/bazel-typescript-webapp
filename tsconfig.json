@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "target": "es5",
+      "lib": ["dom", "es5"],
+      "types": [
+          "jasmine"
+      ],
+      "outDir": "."
+    },
+    "exclude": [
+        "node_modules"
+    ]
+  }

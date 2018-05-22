@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "A very simple Web App using typescript, bazel and",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ibazel build app",
+    "serve": "ibazel run devserver",
+    "e2e": "concurrently \"bazel run devserver\" \"while ! nc -z 127.0.0.1 5432; do sleep 1; done && protractor\" --kill-others --success first",
+    "clean": "bazel clean --expunge",
+    "postinstall": "webdriver-manager update"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@bazel/typescript": "^0.14.0",
+    "@types/jasmine": "^2.8.7",
+    "concurrently": "^3.5.1",
+    "ts-node": "^6.0.3",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "protractor": "^5.3.2"
+  }
+}
